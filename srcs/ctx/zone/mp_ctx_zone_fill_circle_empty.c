@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 03:22:30 by jodufour          #+#    #+#             */
-/*   Updated: 2021/10/04 04:08:30 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/04 04:32:55 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static bool	is_border(t_circle circle, int x, int y)
 		y_dist = circle.y - (float)y;
 	else
 		y_dist = (float)y - circle.y;
-	return ((powf(x_dist, 2) + powf(y_dist, 2)) == powf(circle.radius, 2));
+	return ((int)sqrtf(powf(x_dist, 2) + powf(y_dist, 2)) == (int)circle.radius);
 }
 
 int	mp_ctx_zone_fill_circle_empty(t_circle circle)
